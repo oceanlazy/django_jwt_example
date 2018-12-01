@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Posts{% endblock %}
+
+{% block content %}
+    <a id='logout' href="{% url 'logout' %}">logout</a>
+    <br>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add post</button>
+    </form>
+    {% for post in posts %}
+        <div>{{ post.author }}
+            <br>
+            {{ post.text }}
+            <br><br>
+            {{ post.likes }} <a id='like' href="{% url 'like' slug=post.slug %}">+</a> <a id='unlike' href="{% url 'unlike' slug=post.slug %}">-</a>
+            <br><hr><br>
+        </div>
+    {% endfor %}
+    <br>
+{% endblock %}
