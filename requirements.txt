@@ -6,7 +6,7 @@ djangorestframework==3.9.0
 djangorestframework-simplejwt==3.3
 idna==2.7
 pyhunter==0.3
-PyJWT==1.6.4
+PyJWT==2.4.0
 pytz==2018.7
 requests==2.20.1
 selenium==3.141.0
